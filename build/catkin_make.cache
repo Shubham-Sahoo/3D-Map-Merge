@@ -1,0 +1,2 @@
+map_merge
+-DCATKIN_DEVEL_PREFIX=/home/shubham/Map-merge/devel -DCMAKE_INSTALL_PREFIX=/home/shubham/Map-merge/install -G Unix Makefiles
