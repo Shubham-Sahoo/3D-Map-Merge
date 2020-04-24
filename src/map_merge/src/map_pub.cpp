@@ -31,7 +31,7 @@ int main (int argc, char** argv)
   // Fill in the cloud data
   pcl::PLYReader reader;
   // Replace the path below with the path where you saved your file
-  reader.read ("/home/shubham/catkin_ws/src/map_merge/src/map1.ply", *cloud);
+  reader.read ("/home/shubham/Map-merge/src/map_merge/src/map1.ply", *cloud);
 
   std::cout << "Loaded "
             << cloud->width * cloud->height
@@ -49,7 +49,7 @@ int main (int argc, char** argv)
 
 
   // Create a ROS publisher for the output point cloud
-  pub = nh.advertise<sensor_msgs::PointCloud2> ("/camera/depth/points", 1);
+  pub = nh.advertise<sensor_msgs::PointCloud2> ("/points_map", 10);
 	ros::Rate loop_rate(10);
   while(nh.ok())
 	{

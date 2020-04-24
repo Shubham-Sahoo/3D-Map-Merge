@@ -12,8 +12,8 @@ void poseCallback(const geometry_msgs::TwistConstPtr& msg)
   geometry_msgs::TransformStamped transformStamped;
   
   transformStamped.header.stamp = ros::Time::now();
-  transformStamped.header.frame_id = "world";
-  transformStamped.child_frame_id = "base_link2";
+  transformStamped.header.frame_id = "map";
+  transformStamped.child_frame_id = "velodyne";
   transformStamped.transform.translation.x = msg->linear.x;
   transformStamped.transform.translation.y = msg->linear.y;
   transformStamped.transform.translation.z = 0.0;

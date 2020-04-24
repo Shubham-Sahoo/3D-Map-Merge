@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/shubham/Map-merge/install/lib;/home/shubham/catkin_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/shubham/Map-merge/install/lib;/home/shubham/Map-merge/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -177,7 +177,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(map_merge_EXPORTED_TARGETS "")
+set(map_merge_EXPORTED_TARGETS "map_merge_generate_messages_cpp;map_merge_generate_messages_eus;map_merge_generate_messages_lisp;map_merge_generate_messages_nodejs;map_merge_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${map_merge_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -185,7 +185,7 @@ foreach(t ${map_merge_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "pcl_conversions;pcl_ros;roscpp;sensor_msgs;std_msgs;tf;pcl_msgs;tf2_sensor_msgs;tf2;tf2_ros;geometry_msgs")
+set(depends "pcl_conversions;pcl_ros;roscpp;sensor_msgs;std_msgs;tf;pcl_msgs;tf2_sensor_msgs;tf2;tf2_ros;geometry_msgs;velodyne_pointcloud;message_runtime;nav_msgs")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
@@ -214,7 +214,7 @@ foreach(depend ${depends})
   list(APPEND map_merge_EXPORTED_TARGETS ${${map_merge_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "map_merge-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${map_merge_DIR}/${extra})

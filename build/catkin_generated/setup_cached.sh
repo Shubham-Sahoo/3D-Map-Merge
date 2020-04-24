@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/shubham/Map-merge/devel:$CMAKE_PREFIX_PATH"
 export PWD="/home/shubham/Map-merge/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/shubham/Map-merge/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/shubham/Map-merge/src:$ROS_PACKAGE_PATH"

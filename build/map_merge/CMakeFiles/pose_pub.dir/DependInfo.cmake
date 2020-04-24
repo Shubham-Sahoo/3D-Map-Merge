@@ -34,6 +34,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/home/shubham/Map-merge/devel/include"
   "/usr/include/vtk-6.2"
   "/usr/include/freetype2"
   "/usr/include/x86_64-linux-gnu/freetype2"
