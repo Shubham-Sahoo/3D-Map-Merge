@@ -71,6 +71,5 @@ map_merge/CMakeFiles/tf_map.dir/src/tf_pub.cpp.o
  /opt/ros/kinetic/include/tf2/LinearMath/Scalar.h
  /opt/ros/kinetic/include/tf2/LinearMath/Vector3.h
  /opt/ros/kinetic/include/tf2_ros/transform_broadcaster.h
- /opt/ros/kinetic/include/turtlesim/Pose.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h

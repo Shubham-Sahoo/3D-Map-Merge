@@ -20,6 +20,10 @@ find_package(catkin REQUIRED COMPONENTS
   tf2
   tf2_ros
   geometry_msgs
+  velodyne_pointcloud
+  message_generation
+  nav_msgs
+
 )
 find_package(PCL 1.8 REQUIRED)
 
@@ -58,11 +62,11 @@ find_package(PCL 1.8 REQUIRED)
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+ add_message_files(
+   FILES
+   ConfigICP.msg
+   ICPStat.msg
+ )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -79,10 +83,11 @@ find_package(PCL 1.8 REQUIRED)
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   sensor_msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   sensor_msgs
+   std_msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -122,7 +127,8 @@ include_directories(
 catkin_package(
   INCLUDE_DIRS include 
   LIBRARIES map_merge
-  CATKIN_DEPENDS pcl_conversions pcl_ros roscpp sensor_msgs std_msgs tf pcl_msgs tf2_sensor_msgs tf2 tf2_ros geometry_msgs
+  CATKIN_DEPENDS pcl_conversions pcl_ros roscpp sensor_msgs std_msgs tf pcl_msgs tf2_sensor_msgs tf2 tf2_ros geometry_msgs velodyne_pointcloud
+ message_runtime nav_msgs
   DEPENDS PCL 
 )
 
@@ -239,3 +245,20 @@ target_link_libraries(tf_map2 ${catkin_LIBRARIES})
 
 add_executable(pose_pub2 src/pose_pub2.cpp)
 target_link_libraries(pose_pub2 ${catkin_LIBRARIES})
+
+add_executable(icp_matching src/icp_matching.cpp)
+target_link_libraries(icp_matching ${catkin_LIBRARIES})
+add_dependencies(icp_matching ${catkin_EXPORTED_TARGETS})
+
+add_executable(config_pub src/config_icp_pub.cpp)
+target_link_libraries(config_pub ${catkin_LIBRARIES})
+add_dependencies(config_pub ${catkin_EXPORTED_TARGETS})
+
+add_executable(pose_cov src/pose_cov.cpp)
+target_link_libraries(pose_cov ${catkin_LIBRARIES})
+add_dependencies(pose_cov ${catkin_EXPORTED_TARGETS})
+
+add_executable(tw2q src/twist2quater.cpp)
+target_link_libraries(tw2q ${catkin_LIBRARIES})
+add_dependencies(tw2q ${catkin_EXPORTED_TARGETS})
+
