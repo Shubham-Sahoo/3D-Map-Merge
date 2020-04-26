@@ -7,7 +7,7 @@
 - [Getting Started](#getting-started)
   - [Installation](#installation)
     - [Installation for Ubuntu 16.04 and ROS Kinetic](#installation-for-ubuntu-16.04-and-ros-kinetic)
-  - [Run the Fouliex_Bot Gazebo Simulation](#run-the-avoidance-gazebosimulation)
+  - [Run the Fouliex_Bot Gazebo Simulation](#run-the-fouliex_bot-gazebosimulation)
 - [Troubleshooting](#troubleshooting)
 - [Advanced](#advanced)
   - [Message Flows](#message-flow)
