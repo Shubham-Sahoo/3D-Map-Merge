@@ -7,4 +7,10 @@
 # new environment variables
 
 # modified environment variables
+export CMAKE_PREFIX_PATH="/home/shubham/Map-merge/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/shubham/Map-merge/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/shubham/Map-merge/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/shubham/Map-merge/build"
+export PYTHONPATH="/home/shubham/Map-merge/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/shubham/Map-merge/devel/share/common-lisp"
+export ROS_PACKAGE_PATH="/home/shubham/Map-merge/src:$ROS_PACKAGE_PATH"

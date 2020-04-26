@@ -91,6 +91,8 @@ pcl/registration/icp.h
 -
 pcl/filters/voxel_grid.h
 -
+pcl/filters/filter.h
+-
 map_merge/ConfigICP.h
 /home/shubham/Map-merge/src/map_merge/src/map_merge/ConfigICP.h
 map_merge/ICPStat.h
