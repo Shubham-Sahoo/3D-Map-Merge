@@ -99,7 +99,7 @@ This is a step-by-step guide to install and build all the prerequisites for runn
    source ~/catkin_ws/devel/setup.bash
 	 ```
 
-## Run the Fouliex_bot Gazebo Simulation
+## Run the Fouliex_Bot Gazebo Simulation
 
 In the following section we guide you through installing and running a Gazebo simulation. 
 
