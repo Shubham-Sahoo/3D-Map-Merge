@@ -7,7 +7,7 @@
 - [Getting Started](#getting-started)
   - [Installation](#installation)
     - [Installation for Ubuntu 16.04 and ROS Kinetic](#installation-for-ubuntu-16.04-and-ros-kinetic)
-  - [Run the Fouliex_Bot Gazebo Simulation](#run-the-avoidance-gazebosimulation)
+  - [Run the Fouliex_Bot Gazebo Simulation](#run-the-fouliex_bot-gazebosimulation)
 - [Troubleshooting](#troubleshooting)
 - [Advanced](#advanced)
   - [Message Flows](#message-flow)
@@ -99,7 +99,7 @@ This is a step-by-step guide to install and build all the prerequisites for runn
    source ~/catkin_ws/devel/setup.bash
 	 ```
 
-## Run the Fouliex_bot Gazebo Simulation
+## Run the Fouliex_Bot Gazebo Simulation
 
 In the following section we guide you through installing and running a Gazebo simulation. 
 
