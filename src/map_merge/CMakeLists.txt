@@ -246,6 +246,9 @@ target_link_libraries(tf_map2 ${catkin_LIBRARIES})
 add_executable(pose_pub2 src/pose_pub2.cpp)
 target_link_libraries(pose_pub2 ${catkin_LIBRARIES})
 
+add_executable(filter src/voxel_pub.cpp)
+target_link_libraries(filter ${catkin_LIBRARIES})
+
 add_executable(icp_matching src/icp_matching.cpp)
 target_link_libraries(icp_matching ${catkin_LIBRARIES})
 add_dependencies(icp_matching ${catkin_EXPORTED_TARGETS})

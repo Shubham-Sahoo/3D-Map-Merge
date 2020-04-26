@@ -26,6 +26,7 @@
 #include <pcl_conversions/pcl_conversions.h>
 #include <pcl/registration/icp.h>
 #include <pcl/filters/voxel_grid.h>
+#include <pcl/filters/filter.h>
 
 #include "map_merge/ConfigICP.h"
 
@@ -119,7 +120,7 @@ static std::chrono::time_point<std::chrono::system_clock> matching_start, matchi
 static ros::Publisher time_icp_matching_pub;
 static std_msgs::Float32 time_icp_matching;
 
-static int _queue_size = 1000;
+static int _queue_size = 2000;
 
 static ros::Publisher icp_stat_pub;
 static map_merge::ICPStat icp_stat_msg;
@@ -257,8 +258,8 @@ static void initialpose_callback(const geometry_msgs::PoseWithCovarianceStamped:
   try
   {
     ros::Time now = ros::Time(0);
-    listener.waitForTransform("/map", input->header.frame_id, now, ros::Duration(10.0));
-    listener.lookupTransform("/map", input->header.frame_id, now, transform);
+    listener.waitForTransform("/odom", input->header.frame_id, now, ros::Duration(10.0));
+    listener.lookupTransform("/odom", input->header.frame_id, now, transform);
   }
   catch (tf::TransformException& ex)
   {
@@ -298,13 +299,18 @@ static void points_callback(const sensor_msgs::PointCloud2::ConstPtr& input)
 
     pcl::PointXYZ p;
     pcl::PointCloud<pcl::PointXYZ> filtered_scan;
+    pcl::PointCloud<pcl::PointXYZ> filtered_scan2;
+
 
     current_scan_time = input->header.stamp;
 
     pcl::fromROSMsg(*input, filtered_scan);
-    pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_scan_ptr(new pcl::PointCloud<pcl::PointXYZ>(filtered_scan));
+    std::vector<int> index_point;
+    pcl::removeNaNFromPointCloud(filtered_scan,filtered_scan2,index_point);
+    pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_scan_ptr(new pcl::PointCloud<pcl::PointXYZ>(filtered_scan2));
+    //pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_scan_ptr(new pcl::PointCloud<pcl::PointXYZ>(filtered_scan3));
     int scan_points_num = filtered_scan_ptr->size();
-
+    std::cout<<"\n In point : "<<scan_points_num;
     Eigen::Matrix4f t(Eigen::Matrix4f::Identity());   // base_link
     Eigen::Matrix4f t2(Eigen::Matrix4f::Identity());  // localizer
 
@@ -439,7 +445,7 @@ static void points_callback(const sensor_msgs::PointCloud2::ConstPtr& input)
 
     // Set values for publishing pose
     predict_q.setRPY(predict_pose.roll, predict_pose.pitch, predict_pose.yaw);
-    predict_pose_msg.header.frame_id = "/map";
+    predict_pose_msg.header.frame_id = "/odom";
     predict_pose_msg.header.stamp = current_scan_time;
     predict_pose_msg.pose.position.x = predict_pose.x;
     predict_pose_msg.pose.position.y = predict_pose.y;
@@ -450,7 +456,7 @@ static void points_callback(const sensor_msgs::PointCloud2::ConstPtr& input)
     predict_pose_msg.pose.orientation.w = predict_q.w();
 
     icp_q.setRPY(icp_pose.roll, icp_pose.pitch, icp_pose.yaw);
-    icp_pose_msg.header.frame_id = "/map";
+    icp_pose_msg.header.frame_id = "/odom";
     icp_pose_msg.header.stamp = current_scan_time;
     icp_pose_msg.pose.position.x = icp_pose.x;
     icp_pose_msg.pose.position.y = icp_pose.y;
@@ -461,7 +467,7 @@ static void points_callback(const sensor_msgs::PointCloud2::ConstPtr& input)
     icp_pose_msg.pose.orientation.w = icp_q.w();
 
     current_q.setRPY(current_pose.roll, current_pose.pitch, current_pose.yaw);
-    current_pose_msg.header.frame_id = "/map";
+    current_pose_msg.header.frame_id = "/odom";
     current_pose_msg.header.stamp = current_scan_time;
     current_pose_msg.pose.position.x = current_pose.x;
     current_pose_msg.pose.position.y = current_pose.y;
@@ -472,7 +478,7 @@ static void points_callback(const sensor_msgs::PointCloud2::ConstPtr& input)
     current_pose_msg.pose.orientation.w = current_q.w();
 
     localizer_q.setRPY(localizer_pose.roll, localizer_pose.pitch, localizer_pose.yaw);
-    localizer_pose_msg.header.frame_id = "/map";
+    localizer_pose_msg.header.frame_id = "/odom";
     localizer_pose_msg.header.stamp = current_scan_time;
     localizer_pose_msg.pose.position.x = localizer_pose.x;
     localizer_pose_msg.pose.position.y = localizer_pose.y;
@@ -489,7 +495,7 @@ static void points_callback(const sensor_msgs::PointCloud2::ConstPtr& input)
     // Send TF "/base_link" to "/map"
     transform.setOrigin(tf::Vector3(current_pose.x, current_pose.y, current_pose.z));
     transform.setRotation(current_q);
-    br.sendTransform(tf::StampedTransform(transform, current_scan_time, "/map", "/base_link"));
+    br.sendTransform(tf::StampedTransform(transform, current_scan_time, "/odom", "/robot_footprint"));
 
     matching_end = std::chrono::system_clock::now();
     exe_time = std::chrono::duration_cast<std::chrono::microseconds>(matching_end - matching_start).count() / 1000.0;
@@ -708,7 +714,7 @@ int main(int argc, char** argv)
   //ros::Subscriber gnss_sub = nh.subscribe("gnss_pose", 10, gnss_callback);
   ros::Subscriber map_sub = nh.subscribe("points_map", 10, map_callback);
   ros::Subscriber initialpose_sub = nh.subscribe("initialpose", 1000, initialpose_callback);
-  ros::Subscriber points_sub = nh.subscribe("camera/depth/points", _queue_size, points_callback);
+  ros::Subscriber points_sub = nh.subscribe("points_raw", _queue_size, points_callback);
 
   ros::spin();
 

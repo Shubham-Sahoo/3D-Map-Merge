@@ -1000,6 +1000,19 @@ geometry_msgs_generate_messages_cpp/fast:
 .PHONY : geometry_msgs_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named filter
+
+# Build rule for target.
+filter: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 filter
+.PHONY : filter
+
+# fast build rule for target.
+filter/fast:
+	$(MAKE) -f map_merge/CMakeFiles/filter.dir/build.make map_merge/CMakeFiles/filter.dir/build
+.PHONY : filter/fast
+
+#=============================================================================
 # Target rules for targets named pcl_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -1895,6 +1908,7 @@ help:
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... filter"
 	@echo "... pcl_msgs_generate_messages_lisp"
 	@echo "... pcl_msgs_generate_messages_nodejs"
 	@echo "... std_srvs_generate_messages_nodejs"
