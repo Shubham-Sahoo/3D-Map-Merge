@@ -65,7 +65,7 @@ static double _gnss_reinit_fitness = 500.0;
 static pcl::IterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> icp;
 
 // Default values for ICP
-static int maximum_iterations = 1000;
+static int maximum_iterations = 100;
 static double transformation_epsilon = 0.01;
 static double max_correspondence_distance = 1.0;
 static double euclidean_fitness_epsilon = 0.1;
@@ -323,7 +323,7 @@ static void points_callback(const sensor_msgs::PointCloud2::ConstPtr& input)
     // Guess the initial gross estimation of the transformation
     predict_pose.x = previous_pose.x + offset_x;
     predict_pose.y = previous_pose.y + offset_y;
-    predict_pose.z = previous_pose.z + offset_z;
+    predict_pose.z = 0.0;//previous_pose.z + offset_z;
     predict_pose.roll = previous_pose.roll;
     predict_pose.pitch = previous_pose.pitch;
     predict_pose.yaw = previous_pose.yaw + offset_yaw;
@@ -363,7 +363,7 @@ static void points_callback(const sensor_msgs::PointCloud2::ConstPtr& input)
     // Update localizer_pose
     localizer_pose.x = t(0, 3);
     localizer_pose.y = t(1, 3);
-    localizer_pose.z = t(2, 3);
+    localizer_pose.z = 0.0;//t(2, 3);
     mat_l.getRPY(localizer_pose.roll, localizer_pose.pitch, localizer_pose.yaw, 1);
 
     tf::Matrix3x3 mat_b;  // base_link
@@ -374,7 +374,7 @@ static void points_callback(const sensor_msgs::PointCloud2::ConstPtr& input)
     // Update icp_pose
     icp_pose.x = t2(0, 3);
     icp_pose.y = t2(1, 3);
-    icp_pose.z = t2(2, 3);
+    icp_pose.z = 0.0;//t2(2, 3);
     mat_b.getRPY(icp_pose.roll, icp_pose.pitch, icp_pose.yaw, 1);
 
     // Calculate the difference between icp_pose and predict_pose
@@ -396,7 +396,7 @@ static void points_callback(const sensor_msgs::PointCloud2::ConstPtr& input)
     {
       current_pose.x = icp_pose.x;
       current_pose.y = icp_pose.y;
-      current_pose.z = icp_pose.z;
+      current_pose.z = 0.0;//icp_pose.z;
       current_pose.roll = icp_pose.roll;
       current_pose.pitch = icp_pose.pitch;
       current_pose.yaw = icp_pose.yaw;
@@ -405,7 +405,7 @@ static void points_callback(const sensor_msgs::PointCloud2::ConstPtr& input)
     {
       current_pose.x = predict_pose.x;
       current_pose.y = predict_pose.y;
-      current_pose.z = predict_pose.z;
+      current_pose.z = 0.0;//predict_pose.z;
       current_pose.roll = predict_pose.roll;
       current_pose.pitch = predict_pose.pitch;
       current_pose.yaw = predict_pose.yaw;
