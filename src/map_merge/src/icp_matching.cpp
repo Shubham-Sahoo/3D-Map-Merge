@@ -65,11 +65,11 @@ static double _gnss_reinit_fitness = 500.0;
 static pcl::IterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> icp;
 
 // Default values for ICP
-static int maximum_iterations = 100;
+static int maximum_iterations = 1000;
 static double transformation_epsilon = 0.01;
 static double max_correspondence_distance = 1.0;
 static double euclidean_fitness_epsilon = 0.1;
-static double ransac_outlier_rejection_threshold = 1.0;
+static double ransac_outlier_rejection_threshold = 0.5;
 
 static ros::Publisher predict_pose_pub;
 static geometry_msgs::PoseStamped predict_pose_msg;
@@ -258,8 +258,8 @@ static void initialpose_callback(const geometry_msgs::PoseWithCovarianceStamped:
   try
   {
     ros::Time now = ros::Time(0);
-    listener.waitForTransform("/odom", input->header.frame_id, now, ros::Duration(10.0));
-    listener.lookupTransform("/odom", input->header.frame_id, now, transform);
+    listener.waitForTransform("/odom", "/robot_footprint", now, ros::Duration(10.0));
+    listener.lookupTransform("/odom", "/robot_footprint", now, transform);
   }
   catch (tf::TransformException& ex)
   {
@@ -495,7 +495,7 @@ static void points_callback(const sensor_msgs::PointCloud2::ConstPtr& input)
     // Send TF "/base_link" to "/map"
     transform.setOrigin(tf::Vector3(current_pose.x, current_pose.y, current_pose.z));
     transform.setRotation(current_q);
-    br.sendTransform(tf::StampedTransform(transform, current_scan_time, "/odom", "/robot_footprint"));
+    br.sendTransform(tf::StampedTransform(transform, current_scan_time, "/odom", "/world"));
 
     matching_end = std::chrono::system_clock::now();
     exe_time = std::chrono::duration_cast<std::chrono::microseconds>(matching_end - matching_start).count() / 1000.0;
@@ -630,7 +630,7 @@ int main(int argc, char** argv)
   private_nh.param<double>("gnss_reinit_fitness", _gnss_reinit_fitness, 500.0);
 
 	
-  /*if (nh.getParam("localizer", _localizer) == false)
+  if (nh.getParam("localizer", _localizer) == false)
   {
     std::cout << "localizer is not set." << std::endl;
     return 1;
@@ -665,7 +665,7 @@ int main(int argc, char** argv)
   {
     std::cout << "tf_yaw is not set." << std::endl;
     return 1;
-  }*/
+  }
 
   std::cout << "-----------------------------------------------------------------" << std::endl;
   std::cout << "Log file: " << filename << std::endl;

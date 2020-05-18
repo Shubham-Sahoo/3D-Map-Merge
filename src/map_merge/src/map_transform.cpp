@@ -33,16 +33,25 @@ void cloud_cb (const sensor_msgs::PointCloud2ConstPtr& input)
 	try
 	{
 		//tfBuffer.waitForTransform("/base_link2", "/base_link1", ros::Time(0), ros::Duration(3.0));
-  	tr = tfBuffer.lookupTransform("base_link2", "base_link1", ros::Time(0),ros::Duration(3.0));
+  	tr = tfBuffer.lookupTransform("odom","world", ros::Time(0),ros::Duration(40.0));
 	}
     catch (tf2::TransformException &ex) {
       ROS_WARN("%s",ex.what());
       ros::Duration(1.0).sleep();
     }
 
+	/*tf::Quaternion q(input->pose.pose.orientation.x, input->pose.pose.orientation.y, input->pose.pose.orientation.z,
+                   input->pose.pose.orientation.w);
+  tf::Matrix3x3 m(q);
+  current_pose.x = input->pose.pose.position.x + transform.getOrigin().x();
+  current_pose.y = input->pose.pose.position.y + transform.getOrigin().y();
+  current_pose.z = input->pose.pose.position.z + transform.getOrigin().z();
+  m.getRPY(current_pose.roll, current_pose.pitch, current_pose.yaw);
+	*/
+
 
 	tr_bs2.header.stamp = ros::Time::now(); 
-  tr_bs2.header.frame_id = "world" ;
+  tr_bs2.header.frame_id = "odom" ;
   tr_bs2.child_frame_id = "base_link2";
   tr_bs2.transform.translation.x = -1; 
   tr_bs2.transform.translation.y = 0; 
@@ -73,7 +82,7 @@ int main (int argc, char** argv)
   pcl::PCLPointCloud2::Ptr transformed_cloud (new pcl::PCLPointCloud2 ());
 
 
-  ros::Subscriber sub = nh.subscribe ("output", 10, cloud_cb);
+  ros::Subscriber sub = nh.subscribe ("points_raw", 1, cloud_cb);
   
 	//ros::Subscriber sub2 = nh.subscribe ("tf", 1, cloud_cb);
   // Convert to ROS data type
@@ -83,7 +92,7 @@ int main (int argc, char** argv)
 
 
   // Create a ROS publisher for the output point cloud
-  pub = nh.advertise<sensor_msgs::PointCloud2> ("output_trans", 10);
+  pub = nh.advertise<sensor_msgs::PointCloud2> ("output_trans", 1);
 
 	//ros::Rate loop_rate(10);
   //while(nh.ok())
