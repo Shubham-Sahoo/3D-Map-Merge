@@ -43,7 +43,7 @@ void cloud_cb (const sensor_msgs::PointCloud2ConstPtr& input)
   sor.filter (*cloud_filtered);
 
   pcl_conversions::fromPCL(*cloud_filtered, output);
-
+	output.header.frame_id="camera_depth_optical_frame";
 	/*tf2_ros::Buffer tfBuffer;
   tf2_ros::TransformListener tfListener(tfBuffer);
 	try

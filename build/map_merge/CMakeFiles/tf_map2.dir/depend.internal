@@ -3,6 +3,9 @@
 
 map_merge/CMakeFiles/tf_map2.dir/src/tf_pub2.cpp.o
  /home/shubham/Map-merge/src/map_merge/src/tf_pub2.cpp
+ /opt/ros/kinetic/include/geometry_msgs/Point.h
+ /opt/ros/kinetic/include/geometry_msgs/Pose.h
+ /opt/ros/kinetic/include/geometry_msgs/PoseStamped.h
  /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
  /opt/ros/kinetic/include/geometry_msgs/Transform.h
  /opt/ros/kinetic/include/geometry_msgs/TransformStamped.h

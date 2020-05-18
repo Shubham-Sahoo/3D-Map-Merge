@@ -25,18 +25,15 @@ static void convert(const nav_msgs::Odometry::ConstPtr& input)
 
 	geometry_msgs::PoseWithCovarianceStamped output;
 	output.header=input->header;
-	output.pose.pose.position.x=input->twist.twist.linear.x;
-	output.pose.pose.position.y=input->twist.twist.linear.y;
-	output.pose.pose.position.z=input->twist.twist.linear.z;
-	tf2::Quaternion q;
-	q.setRPY(input->twist.twist.angular.x,input->twist.twist.angular.y,input->twist.twist.angular.z);
-	q.normalize();
-	output.pose.pose.orientation.x=q[0];
-	output.pose.pose.orientation.y=q[1];
-	output.pose.pose.orientation.z=q[2];
-	output.pose.pose.orientation.w=q[3];
+	output.pose.pose.position.x=input->pose.pose.position.x;
+	output.pose.pose.position.y=input->pose.pose.position.y;
+	output.pose.pose.position.z=input->pose.pose.position.z;
+	output.pose.pose.orientation.x=input->pose.pose.orientation.x;
+	output.pose.pose.orientation.y=input->pose.pose.orientation.y;
+	output.pose.pose.orientation.z=input->pose.pose.orientation.z;
+	output.pose.pose.orientation.w=input->pose.pose.orientation.w;
 
-	output.pose.covariance=input->twist.covariance;
+	output.pose.covariance=input->pose.covariance;
 
 	pub.publish(output);
   

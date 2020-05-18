@@ -1,16 +1,16 @@
 digraph G {
-"chassis" -> "camera"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1587843948.964 sec old)\nBuffer length: 0.000 sec\n"];
-"robot_footprint" -> "chassis"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1587843948.964 sec old)\nBuffer length: 0.000 sec\n"];
-"camera" -> "camera_depth_frame"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1587843948.964 sec old)\nBuffer length: 0.000 sec\n"];
-"camera_depth_frame" -> "camera_depth_optical_frame"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1587843948.964 sec old)\nBuffer length: 0.000 sec\n"];
-"camera" -> "camera_rgb_frame"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1587843948.964 sec old)\nBuffer length: 0.000 sec\n"];
-"camera_rgb_frame" -> "camera_rgb_optical_frame"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1587843948.964 sec old)\nBuffer length: 0.000 sec\n"];
-"chassis" -> "hokuyo"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1587843948.964 sec old)\nBuffer length: 0.000 sec\n"];
-"odom" -> "robot_footprint"[label="Broadcaster: /gazebo\nAverage rate: 10.294 Hz\nMost recent transform: 1451.202 ( 1587842497.762 sec old)\nBuffer length: 3.400 sec\n"];
-"chassis" -> "left_wheel"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.300 Hz\nMost recent transform: 1451.200 ( 1587842497.764 sec old)\nBuffer length: 3.398 sec\n"];
-"chassis" -> "right_wheel"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.300 Hz\nMost recent transform: 1451.200 ( 1587842497.764 sec old)\nBuffer length: 3.398 sec\n"];
+"chassis" -> "camera"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1589780635.132 sec old)\nBuffer length: 0.000 sec\n"];
+"robot_footprint" -> "chassis"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1589780635.132 sec old)\nBuffer length: 0.000 sec\n"];
+"camera" -> "camera_depth_frame"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1589780635.132 sec old)\nBuffer length: 0.000 sec\n"];
+"camera_depth_frame" -> "camera_depth_optical_frame"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1589780635.132 sec old)\nBuffer length: 0.000 sec\n"];
+"camera" -> "camera_rgb_frame"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1589780635.132 sec old)\nBuffer length: 0.000 sec\n"];
+"camera_rgb_frame" -> "camera_rgb_optical_frame"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1589780635.132 sec old)\nBuffer length: 0.000 sec\n"];
+"chassis" -> "hokuyo"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 1589780635.132 sec old)\nBuffer length: 0.000 sec\n"];
+"odom" -> "robot_footprint"[label="Broadcaster: /gazebo\nAverage rate: 10.273 Hz\nMost recent transform: 2329.901 ( 1589778305.231 sec old)\nBuffer length: 3.699 sec\n"];
+"chassis" -> "left_wheel"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.267 Hz\nMost recent transform: 2329.901 ( 1589778305.231 sec old)\nBuffer length: 3.701 sec\n"];
+"chassis" -> "right_wheel"[label="Broadcaster: /robot_state_publisher\nAverage rate: 10.267 Hz\nMost recent transform: 2329.901 ( 1589778305.231 sec old)\nBuffer length: 3.701 sec\n"];
 edge [style=invis];
  subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
-"Recorded at time: 1587843948.964"[ shape=plaintext ] ;
+"Recorded at time: 1589780635.132"[ shape=plaintext ] ;
  }->"odom";
 }

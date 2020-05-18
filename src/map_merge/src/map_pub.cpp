@@ -46,7 +46,7 @@ int main (int argc, char** argv)
   // Convert to ROS data type
   sensor_msgs::PointCloud2 output,output_tr;
   pcl_conversions::fromPCL(*cloud, output);
-
+	output.header.frame_id="odom";
 
   // Create a ROS publisher for the output point cloud
   pub = nh.advertise<sensor_msgs::PointCloud2> ("/points_map", 100);
