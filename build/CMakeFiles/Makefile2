@@ -118,6 +118,7 @@ gtest/gtest/clean: gtest/gtest/CMakeFiles/gtest.dir/clean
 # Directory level rules for directory map_merge
 
 # Recursive "all" directory target.
+map_merge/all: map_merge/CMakeFiles/gmap_server.dir/all
 map_merge/all: map_merge/CMakeFiles/pose_cov.dir/all
 map_merge/all: map_merge/CMakeFiles/tf_map2.dir/all
 map_merge/all: map_merge/CMakeFiles/pose_pub.dir/all
@@ -139,6 +140,7 @@ map_merge/preinstall:
 .PHONY : map_merge/preinstall
 
 # Recursive "clean" directory target.
+map_merge/clean: map_merge/CMakeFiles/gmap_server.dir/clean
 map_merge/clean: map_merge/CMakeFiles/pose_cov.dir/clean
 map_merge/clean: map_merge/CMakeFiles/tf_map2.dir/clean
 map_merge/clean: map_merge/CMakeFiles/pose_pub.dir/clean
@@ -403,7 +405,7 @@ CMakeFiles/tests.dir/clean:
 gtest/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock_main.dir/build.make gtest/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=8,9,10,11 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=10,11,12,13 "Built target gmock_main"
 .PHONY : gtest/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -430,7 +432,7 @@ gtest/CMakeFiles/gmock_main.dir/clean:
 gtest/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gmock.dir/build.make gtest/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=5,6,7 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=7,8,9 "Built target gmock"
 .PHONY : gtest/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -457,7 +459,7 @@ gtest/CMakeFiles/gmock.dir/clean:
 gtest/gtest/CMakeFiles/gtest_main.dir/all: gtest/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=14,15 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=16,17 "Built target gtest_main"
 .PHONY : gtest/gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -484,7 +486,7 @@ gtest/gtest/CMakeFiles/gtest_main.dir/clean:
 gtest/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=12,13 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=14,15 "Built target gtest"
 .PHONY : gtest/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -503,6 +505,127 @@ gtest: gtest/gtest/CMakeFiles/gtest.dir/rule
 gtest/gtest/CMakeFiles/gtest.dir/clean:
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/clean
 .PHONY : gtest/gtest/CMakeFiles/gtest.dir/clean
+
+#=============================================================================
+# Target rules for target map_merge/CMakeFiles/gmap_server.dir
+
+# All Build rule for target.
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/bond_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/nodelet_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/dynamic_reconfigure_gencfg.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/roscpp_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/tf_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/velodyne_msgs_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/velodyne_msgs_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/pcl_msgs_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/nodelet_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/bond_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/nodelet_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/topic_tools_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/topic_tools_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/velodyne_driver_gencfg.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/roscpp_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/actionlib_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/bond_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/pcl_msgs_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/pcl_msgs_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/std_srvs_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/std_msgs_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/nav_msgs_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/nodelet_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/bond_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/std_srvs_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/nodelet_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/tf_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/std_srvs_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/nodelet_topic_tools_gencfg.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/std_srvs_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/velodyne_msgs_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/std_srvs_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/tf_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/topic_tools_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/topic_tools_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/topic_tools_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/tf2_msgs_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/tf_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/velodyne_msgs_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/tf_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/actionlib_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/actionlib_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/actionlib_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/velodyne_msgs_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/velodyne_pointcloud_gencfg.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/bond_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/nav_msgs_generate_messages_cpp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/pcl_ros_gencfg.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/nav_msgs_generate_messages_eus.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/nav_msgs_generate_messages_lisp.dir/all
+map_merge/CMakeFiles/gmap_server.dir/all: map_merge/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/all
+	$(MAKE) -f map_merge/CMakeFiles/gmap_server.dir/build.make map_merge/CMakeFiles/gmap_server.dir/depend
+	$(MAKE) -f map_merge/CMakeFiles/gmap_server.dir/build.make map_merge/CMakeFiles/gmap_server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=5,6 "Built target gmap_server"
+.PHONY : map_merge/CMakeFiles/gmap_server.dir/all
+
+# Build rule for subdir invocation for target.
+map_merge/CMakeFiles/gmap_server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shubham/Map-merge/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 map_merge/CMakeFiles/gmap_server.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shubham/Map-merge/build/CMakeFiles 0
+.PHONY : map_merge/CMakeFiles/gmap_server.dir/rule
+
+# Convenience name for target.
+gmap_server: map_merge/CMakeFiles/gmap_server.dir/rule
+
+.PHONY : gmap_server
+
+# clean rule for target.
+map_merge/CMakeFiles/gmap_server.dir/clean:
+	$(MAKE) -f map_merge/CMakeFiles/gmap_server.dir/build.make map_merge/CMakeFiles/gmap_server.dir/clean
+.PHONY : map_merge/CMakeFiles/gmap_server.dir/clean
 
 #=============================================================================
 # Target rules for target map_merge/CMakeFiles/pose_cov.dir
@@ -605,7 +728,7 @@ map_merge/CMakeFiles/pose_cov.dir/all: map_merge/CMakeFiles/nav_msgs_generate_me
 map_merge/CMakeFiles/pose_cov.dir/all: map_merge/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f map_merge/CMakeFiles/pose_cov.dir/build.make map_merge/CMakeFiles/pose_cov.dir/depend
 	$(MAKE) -f map_merge/CMakeFiles/pose_cov.dir/build.make map_merge/CMakeFiles/pose_cov.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=34,35 "Built target pose_cov"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=36,37 "Built target pose_cov"
 .PHONY : map_merge/CMakeFiles/pose_cov.dir/all
 
 # Build rule for subdir invocation for target.
@@ -632,7 +755,7 @@ map_merge/CMakeFiles/pose_cov.dir/clean:
 map_merge/CMakeFiles/tf_map2.dir/all:
 	$(MAKE) -f map_merge/CMakeFiles/tf_map2.dir/build.make map_merge/CMakeFiles/tf_map2.dir/depend
 	$(MAKE) -f map_merge/CMakeFiles/tf_map2.dir/build.make map_merge/CMakeFiles/tf_map2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=42,43 "Built target tf_map2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=44,45 "Built target tf_map2"
 .PHONY : map_merge/CMakeFiles/tf_map2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -659,7 +782,7 @@ map_merge/CMakeFiles/tf_map2.dir/clean:
 map_merge/CMakeFiles/pose_pub.dir/all:
 	$(MAKE) -f map_merge/CMakeFiles/pose_pub.dir/build.make map_merge/CMakeFiles/pose_pub.dir/depend
 	$(MAKE) -f map_merge/CMakeFiles/pose_pub.dir/build.make map_merge/CMakeFiles/pose_pub.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=36,37 "Built target pose_pub"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=38,39 "Built target pose_pub"
 .PHONY : map_merge/CMakeFiles/pose_pub.dir/all
 
 # Build rule for subdir invocation for target.
@@ -686,7 +809,7 @@ map_merge/CMakeFiles/pose_pub.dir/clean:
 map_merge/CMakeFiles/tf_map.dir/all:
 	$(MAKE) -f map_merge/CMakeFiles/tf_map.dir/build.make map_merge/CMakeFiles/tf_map.dir/depend
 	$(MAKE) -f map_merge/CMakeFiles/tf_map.dir/build.make map_merge/CMakeFiles/tf_map.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=40,41 "Built target tf_map"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=42,43 "Built target tf_map"
 .PHONY : map_merge/CMakeFiles/tf_map.dir/all
 
 # Build rule for subdir invocation for target.
@@ -713,7 +836,7 @@ map_merge/CMakeFiles/tf_map.dir/clean:
 map_merge/CMakeFiles/map_tr.dir/all:
 	$(MAKE) -f map_merge/CMakeFiles/map_tr.dir/build.make map_merge/CMakeFiles/map_tr.dir/depend
 	$(MAKE) -f map_merge/CMakeFiles/map_tr.dir/build.make map_merge/CMakeFiles/map_tr.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=32,33 "Built target map_tr"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=34,35 "Built target map_tr"
 .PHONY : map_merge/CMakeFiles/map_tr.dir/all
 
 # Build rule for subdir invocation for target.
@@ -740,7 +863,7 @@ map_merge/CMakeFiles/map_tr.dir/clean:
 map_merge/CMakeFiles/pose_pub2.dir/all:
 	$(MAKE) -f map_merge/CMakeFiles/pose_pub2.dir/build.make map_merge/CMakeFiles/pose_pub2.dir/depend
 	$(MAKE) -f map_merge/CMakeFiles/pose_pub2.dir/build.make map_merge/CMakeFiles/pose_pub2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=38,39 "Built target pose_pub2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=40,41 "Built target pose_pub2"
 .PHONY : map_merge/CMakeFiles/pose_pub2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -767,7 +890,7 @@ map_merge/CMakeFiles/pose_pub2.dir/clean:
 map_merge/CMakeFiles/map_pub.dir/all:
 	$(MAKE) -f map_merge/CMakeFiles/map_pub.dir/build.make map_merge/CMakeFiles/map_pub.dir/depend
 	$(MAKE) -f map_merge/CMakeFiles/map_pub.dir/build.make map_merge/CMakeFiles/map_pub.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=30,31 "Built target map_pub"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=32,33 "Built target map_pub"
 .PHONY : map_merge/CMakeFiles/map_pub.dir/all
 
 # Build rule for subdir invocation for target.
@@ -824,7 +947,7 @@ map_merge/CMakeFiles/map_merge_generate_messages_py.dir/all: map_merge/CMakeFile
 map_merge/CMakeFiles/map_merge_generate_messages_py.dir/all: map_merge/CMakeFiles/_map_merge_generate_messages_check_deps_ConfigICP.dir/all
 	$(MAKE) -f map_merge/CMakeFiles/map_merge_generate_messages_py.dir/build.make map_merge/CMakeFiles/map_merge_generate_messages_py.dir/depend
 	$(MAKE) -f map_merge/CMakeFiles/map_merge_generate_messages_py.dir/build.make map_merge/CMakeFiles/map_merge_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=27,28,29 "Built target map_merge_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=29,30,31 "Built target map_merge_generate_messages_py"
 .PHONY : map_merge/CMakeFiles/map_merge_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -854,7 +977,7 @@ map_merge/CMakeFiles/map_merge_generate_messages_nodejs.dir/all: map_merge/CMake
 map_merge/CMakeFiles/map_merge_generate_messages_nodejs.dir/all: map_merge/CMakeFiles/_map_merge_generate_messages_check_deps_ConfigICP.dir/all
 	$(MAKE) -f map_merge/CMakeFiles/map_merge_generate_messages_nodejs.dir/build.make map_merge/CMakeFiles/map_merge_generate_messages_nodejs.dir/depend
 	$(MAKE) -f map_merge/CMakeFiles/map_merge_generate_messages_nodejs.dir/build.make map_merge/CMakeFiles/map_merge_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=25,26 "Built target map_merge_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=27,28 "Built target map_merge_generate_messages_nodejs"
 .PHONY : map_merge/CMakeFiles/map_merge_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -911,7 +1034,7 @@ map_merge/CMakeFiles/map_merge_generate_messages_eus.dir/all: map_merge/CMakeFil
 map_merge/CMakeFiles/map_merge_generate_messages_eus.dir/all: map_merge/CMakeFiles/_map_merge_generate_messages_check_deps_ConfigICP.dir/all
 	$(MAKE) -f map_merge/CMakeFiles/map_merge_generate_messages_eus.dir/build.make map_merge/CMakeFiles/map_merge_generate_messages_eus.dir/depend
 	$(MAKE) -f map_merge/CMakeFiles/map_merge_generate_messages_eus.dir/build.make map_merge/CMakeFiles/map_merge_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=20,21,22 "Built target map_merge_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=22,23,24 "Built target map_merge_generate_messages_eus"
 .PHONY : map_merge/CMakeFiles/map_merge_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -968,7 +1091,7 @@ map_merge/CMakeFiles/map_merge_generate_messages_cpp.dir/all: map_merge/CMakeFil
 map_merge/CMakeFiles/map_merge_generate_messages_cpp.dir/all: map_merge/CMakeFiles/_map_merge_generate_messages_check_deps_ConfigICP.dir/all
 	$(MAKE) -f map_merge/CMakeFiles/map_merge_generate_messages_cpp.dir/build.make map_merge/CMakeFiles/map_merge_generate_messages_cpp.dir/depend
 	$(MAKE) -f map_merge/CMakeFiles/map_merge_generate_messages_cpp.dir/build.make map_merge/CMakeFiles/map_merge_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=18,19 "Built target map_merge_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=20,21 "Built target map_merge_generate_messages_cpp"
 .PHONY : map_merge/CMakeFiles/map_merge_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2857,7 +2980,7 @@ map_merge/CMakeFiles/icp_matching.dir/all: map_merge/CMakeFiles/nav_msgs_generat
 map_merge/CMakeFiles/icp_matching.dir/all: map_merge/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f map_merge/CMakeFiles/icp_matching.dir/build.make map_merge/CMakeFiles/icp_matching.dir/depend
 	$(MAKE) -f map_merge/CMakeFiles/icp_matching.dir/build.make map_merge/CMakeFiles/icp_matching.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=16,17 "Built target icp_matching"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=18,19 "Built target icp_matching"
 .PHONY : map_merge/CMakeFiles/icp_matching.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3485,7 +3608,7 @@ map_merge/CMakeFiles/map_merge_generate_messages_lisp.dir/all: map_merge/CMakeFi
 map_merge/CMakeFiles/map_merge_generate_messages_lisp.dir/all: map_merge/CMakeFiles/_map_merge_generate_messages_check_deps_ConfigICP.dir/all
 	$(MAKE) -f map_merge/CMakeFiles/map_merge_generate_messages_lisp.dir/build.make map_merge/CMakeFiles/map_merge_generate_messages_lisp.dir/depend
 	$(MAKE) -f map_merge/CMakeFiles/map_merge_generate_messages_lisp.dir/build.make map_merge/CMakeFiles/map_merge_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=23,24 "Built target map_merge_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=25,26 "Built target map_merge_generate_messages_lisp"
 .PHONY : map_merge/CMakeFiles/map_merge_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3768,7 +3891,7 @@ map_merge/CMakeFiles/tw2q.dir/all: map_merge/CMakeFiles/nav_msgs_generate_messag
 map_merge/CMakeFiles/tw2q.dir/all: map_merge/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f map_merge/CMakeFiles/tw2q.dir/build.make map_merge/CMakeFiles/tw2q.dir/depend
 	$(MAKE) -f map_merge/CMakeFiles/tw2q.dir/build.make map_merge/CMakeFiles/tw2q.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=44,45 "Built target tw2q"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/shubham/Map-merge/build/CMakeFiles --progress-num=46,47 "Built target tw2q"
 .PHONY : map_merge/CMakeFiles/tw2q.dir/all
 
 # Build rule for subdir invocation for target.

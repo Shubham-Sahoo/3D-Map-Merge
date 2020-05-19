@@ -265,3 +265,6 @@ add_executable(tw2q src/twist2quater.cpp)
 target_link_libraries(tw2q ${catkin_LIBRARIES})
 add_dependencies(tw2q ${catkin_EXPORTED_TARGETS})
 
+add_executable(gmap_server src/global_mapserver.cpp)
+target_link_libraries(gmap_server ${catkin_LIBRARIES})
+add_dependencies(gmap_server ${catkin_EXPORTED_TARGETS})
