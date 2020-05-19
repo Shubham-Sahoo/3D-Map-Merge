@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+map_merge/CMakeFiles/gmap_server.dir/rule:
+	cd /home/shubham/Map-merge/build && $(MAKE) -f CMakeFiles/Makefile2 map_merge/CMakeFiles/gmap_server.dir/rule
+.PHONY : map_merge/CMakeFiles/gmap_server.dir/rule
+
+# Convenience name for target.
+gmap_server: map_merge/CMakeFiles/gmap_server.dir/rule
+
+.PHONY : gmap_server
+
+# fast build rule for target.
+gmap_server/fast:
+	cd /home/shubham/Map-merge/build && $(MAKE) -f map_merge/CMakeFiles/gmap_server.dir/build.make map_merge/CMakeFiles/gmap_server.dir/build
+.PHONY : gmap_server/fast
+
+# Convenience name for target.
 map_merge/CMakeFiles/pose_cov.dir/rule:
 	cd /home/shubham/Map-merge/build && $(MAKE) -f CMakeFiles/Makefile2 map_merge/CMakeFiles/pose_cov.dir/rule
 .PHONY : map_merge/CMakeFiles/pose_cov.dir/rule
@@ -1979,6 +1994,33 @@ src/config_icp_pub.cpp.s:
 	cd /home/shubham/Map-merge/build && $(MAKE) -f map_merge/CMakeFiles/config_pub.dir/build.make map_merge/CMakeFiles/config_pub.dir/src/config_icp_pub.cpp.s
 .PHONY : src/config_icp_pub.cpp.s
 
+src/global_mapserver.o: src/global_mapserver.cpp.o
+
+.PHONY : src/global_mapserver.o
+
+# target to build an object file
+src/global_mapserver.cpp.o:
+	cd /home/shubham/Map-merge/build && $(MAKE) -f map_merge/CMakeFiles/gmap_server.dir/build.make map_merge/CMakeFiles/gmap_server.dir/src/global_mapserver.cpp.o
+.PHONY : src/global_mapserver.cpp.o
+
+src/global_mapserver.i: src/global_mapserver.cpp.i
+
+.PHONY : src/global_mapserver.i
+
+# target to preprocess a source file
+src/global_mapserver.cpp.i:
+	cd /home/shubham/Map-merge/build && $(MAKE) -f map_merge/CMakeFiles/gmap_server.dir/build.make map_merge/CMakeFiles/gmap_server.dir/src/global_mapserver.cpp.i
+.PHONY : src/global_mapserver.cpp.i
+
+src/global_mapserver.s: src/global_mapserver.cpp.s
+
+.PHONY : src/global_mapserver.s
+
+# target to generate assembly for a file
+src/global_mapserver.cpp.s:
+	cd /home/shubham/Map-merge/build && $(MAKE) -f map_merge/CMakeFiles/gmap_server.dir/build.make map_merge/CMakeFiles/gmap_server.dir/src/global_mapserver.cpp.s
+.PHONY : src/global_mapserver.cpp.s
+
 src/icp_matching.o: src/icp_matching.cpp.o
 
 .PHONY : src/icp_matching.o
@@ -2257,6 +2299,7 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... gmap_server"
 	@echo "... pose_cov"
 	@echo "... tf_map2"
 	@echo "... pose_pub"
@@ -2384,6 +2427,9 @@ help:
 	@echo "... src/config_icp_pub.o"
 	@echo "... src/config_icp_pub.i"
 	@echo "... src/config_icp_pub.s"
+	@echo "... src/global_mapserver.o"
+	@echo "... src/global_mapserver.i"
+	@echo "... src/global_mapserver.s"
 	@echo "... src/icp_matching.o"
 	@echo "... src/icp_matching.i"
 	@echo "... src/icp_matching.s"

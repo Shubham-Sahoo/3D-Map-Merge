@@ -285,6 +285,19 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named gmap_server
+
+# Build rule for target.
+gmap_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmap_server
+.PHONY : gmap_server
+
+# fast build rule for target.
+gmap_server/fast:
+	$(MAKE) -f map_merge/CMakeFiles/gmap_server.dir/build.make map_merge/CMakeFiles/gmap_server.dir/build
+.PHONY : gmap_server/fast
+
+#=============================================================================
 # Target rules for targets named pose_cov
 
 # Build rule for target.
@@ -1853,6 +1866,7 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... gmap_server"
 	@echo "... pose_cov"
 	@echo "... tf_map2"
 	@echo "... pose_pub"
